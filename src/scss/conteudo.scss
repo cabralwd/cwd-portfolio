@@ -1,0 +1,43 @@
+@import "~reset-css/sass/reset";
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "Lexend", sans-serif;
+  font-weight: 500;
+}
+
+body {
+  background: var(--color-primary);
+}
+
+img {
+  max-width: 100%;
+}
+
+p {
+  line-height: 1.2;
+}
+
+a {
+  color: var(--color-text);
+
+  &:hover {
+    color: var(--color-highlight);
+  }
+}
+
+.container {
+  max-width: 1140px;
+  position: relative;
+  padding: 0 30px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @include tamanho-tela(desktop) {
+    padding: 0 15px;
+  }
+}

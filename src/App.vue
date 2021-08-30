@@ -1,7 +1,7 @@
 <template>
-  <div id="app">
+  <main id="app">
     <router-view />
-  </div>
+  </main>
 </template>
 
 <script>
@@ -13,4 +13,11 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+// Fontes
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap");
+
+// Estilos principais
+@import "/scss/conteudo";
+</style>
