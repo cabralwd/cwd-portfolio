@@ -103,9 +103,11 @@ export default {
 
     p {
       text-align: center;
+      margin-top: 1.3rem;
 
       @include tamanho-tela(tablet) {
         text-align: initial;
+        margin-top: 0;
       }
 
       span {
@@ -123,16 +125,16 @@ export default {
   }
 
   .historia {
-    .contatos {
-      margin-top: 30px;
-    }
-
     a {
       font-weight: 700;
     }
 
     li {
       line-height: 1.3;
+    }
+
+    .contatos {
+      margin-top: 20px;
     }
 
     .redes-sociais {

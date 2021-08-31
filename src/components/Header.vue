@@ -2,7 +2,7 @@
   <header class="shadow">
     <router-link id="logo" to="/">
       <h1>
-        <span>CWD</span> <br />
+        <span>CWD</span>
         <span>cabral web designer</span>
       </h1>
     </router-link>
@@ -19,18 +19,28 @@
           />
         </svg>
       </div>
-      <div class="menu">
+      <div class="menu" @click="toggleMenuDropdown = !toggleMenuDropdown">
         <div class="open-menu">
-          <div id="hamburger">
+          <div id="hamburger" :class="[menuClose]">
             <span></span>
             <span></span>
             <span></span>
           </div>
-          <p>Menu</p>
+          <p>{{ menuName }}</p>
         </div>
-        <ul style="display: none;">
-          <li></li>
-        </ul>
+        <transition
+          name="menuDropdown"
+          mode="out-in"
+          v-on:enter="showClose()"
+          v-on:leave="hideClose()"
+        >
+          <ul :class="['dropdown']" v-show="toggleMenuDropdown">
+            <li><router-link to="/">Home</router-link></li>
+            <li><router-link to="skills">Skills</router-link></li>
+            <li><router-link to="projetos">Projetos</router-link></li>
+            <li><router-link to="contato">Contato</router-link></li>
+          </ul>
+        </transition>
       </div>
     </nav>
   </header>
@@ -42,6 +52,9 @@ export default {
   data() {
     return {
       dark: false,
+      toggleMenuDropdown: false,
+      menuClose: "",
+      menuName: "Menu",
     };
   },
   methods: {
@@ -54,6 +67,21 @@ export default {
         return document.querySelector("body").classList.remove("dark");
       }
     },
+    sizeMenuTop() {
+      let top = document.querySelector("header").offsetHeight;
+      document.querySelector(".dropdown").style.top = top + "px";
+    },
+    showClose() {
+      this.menuClose = "menu-close";
+      this.menuName = "Fechar";
+    },
+    hideClose() {
+      this.menuClose = "";
+      this.menuName = "Menu";
+    },
+  },
+  mounted() {
+    this.sizeMenuTop();
   },
 };
 </script>
@@ -84,14 +112,24 @@ header {
   font-family: Saira Stencil One, cursive;
   text-decoration: none;
 
-  span {
-    &:first-child {
-      color: var(--color-highlight);
+  h1 {
+    font-size: 2rem;
+
+    @include tamanho-tela(tablet) {
       font-size: 2.625rem;
     }
 
-    &:last-child {
-      color: var(--color-text);
+    span {
+      display: block;
+
+      &:first-child {
+        color: var(--color-highlight);
+      }
+
+      &:last-child {
+        color: var(--color-text);
+        font-size: 0.4em;
+      }
     }
   }
 }
@@ -101,7 +139,11 @@ nav {
 
   .modo-dark {
     cursor: pointer;
-    margin-right: 30px;
+    margin-right: 15px;
+
+    @include tamanho-tela(tablet) {
+      margin-right: 30px;
+    }
 
     svg {
       path {
@@ -133,13 +175,111 @@ nav {
       height: 30px;
       margin-right: 15px;
 
+      &.menu-close {
+        position: relative;
+        justify-content: center;
+
+        span {
+          position: absolute;
+
+          &:nth-child(1) {
+            transform: rotate(45deg);
+          }
+
+          &:nth-child(2) {
+            opacity: 0;
+          }
+
+          &:nth-child(3) {
+            transform: rotate(-45deg);
+          }
+        }
+      }
+
       span {
-        display: block;
+        transition: all 0.5s;
+        position: relative;
         background-color: var(--color-text);
         width: 100%;
         height: 4px;
+
+        &:nth-child(1) {
+          transform: rotate(0deg);
+        }
+
+        &:nth-child(2) {
+          transform: rotate(0deg);
+        }
+
+        &:nth-child(3) {
+          opacity: 1;
+        }
+      }
+
+      @keyframes closeMenu {
+        0% {
+          transform: translate3d(0, 0, 0);
+        }
+
+        100% {
+          transform: translate3d(0, 0, 0);
+        }
+      }
+    }
+
+    .dropdown {
+      position: absolute;
+      overflow-y: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      height: min-content;
+      max-height: 100vh;
+      padding: 1rem 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: var(--color-primary);
+      border-top: 5px solid var(--color-highlight);
+      border-bottom: 5px solid var(--color-highlight);
+
+      @include tamanho-tela(tablet) {
+        padding: 2rem 0;
+      }
+
+      li {
+        margin-top: 15px;
+        font-size: 2rem;
+        display: block;
+
+        &:first-child {
+          margin-top: 0;
+        }
+
+        @include tamanho-tela(celular) {
+          font-size: 1.8rem;
+        }
+
+        @include tamanho-tela(tablet) {
+          font-size: 2.5rem;
+        }
+
+        @include tamanho-tela(desktop) {
+          font-size: 5rem;
+          line-height: 1.2;
+        }
       }
     }
   }
+}
+
+.menuDropdown-enter-active,
+.menuDropdown-leave-active {
+  transition: transform 0.7s;
+}
+.menuDropdown-enter,
+.menuDropdown-leave-to {
+  transform: translate3d(100vw, 0, 0);
 }
 </style>

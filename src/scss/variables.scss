@@ -5,12 +5,14 @@ $three: #ff1717;
 $four: #00b333;
 $gray-1: rgba(7, 7, 7, 0.25);
 $gray-2: rgba(255, 255, 255, 0.25);
+$gray-3: rgba(7, 7, 7, 0.9);
 
 :root {
   --color-primary: #{$two};
   --color-text: #{$one};
   --color-highlight: #{$three};
   --color-gray: #{$gray-1};
+  --color-gray-content: #{$two};
 }
 
 .dark {
@@ -18,6 +20,7 @@ $gray-2: rgba(255, 255, 255, 0.25);
   --color-text: #{$two};
   --color-highlight: #{$four};
   --color-gray: #{$gray-2};
+  --color-gray-content: #{$gray-3};
 }
 
 // Media Queries

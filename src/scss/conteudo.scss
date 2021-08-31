@@ -2,6 +2,7 @@
 
 * {
   box-sizing: border-box;
+  transition: color 0.05s, background-color 0.1s;
 }
 
 html,
@@ -11,7 +12,7 @@ body {
 }
 
 body {
-  background: var(--color-primary);
+  background: var(--color-gray-content);
 }
 
 img {
@@ -39,5 +40,13 @@ a {
 
   @include tamanho-tela(desktop) {
     padding: 0 15px;
+  }
+}
+
+.hideThis {
+  display: none;
+
+  @include tamanho-tela(desktop) {
+    display: block;
   }
 }

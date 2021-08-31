@@ -4,10 +4,10 @@
     <section class="banner">
       <h1 class="titulo-principal">Portfolio</h1>
       <p>
-        Se você chegou até aqui é porque está procurando um Web
-        Designer/Programador!
+        Se você chegou até aqui é porque está procurando um Web Designer &
+        Programador! <br class="hideThis" />
+        Pois bem... Você encontrou, agora deixe me apresentar:
       </p>
-      <p>Pois bem... Você encontrou, agora deixe me apresentar:</p>
     </section>
     <Sobre />
   </div>
@@ -38,16 +38,16 @@ export default {
   margin-top: 160px;
 
   .titulo-principal {
-    font-size: 5.5rem;
+    font-size: 4rem;
     font-family: Saira Stencil One, cursive;
     color: var(--color-highlight);
 
     @include tamanho-tela(celular) {
-      font-size: 7.5rem;
+      font-size: 6.5rem;
     }
 
     @include tamanho-tela(tablet) {
-      font-size: 9.5rem;
+      font-size: 8.5rem;
     }
 
     @include tamanho-tela(desktop) {
@@ -56,7 +56,7 @@ export default {
   }
 
   p {
-    font-size: 1rem;
+    font-size: 1.2rem;
     padding: 0.1rem 30px;
     color: var(--color-text);
 
