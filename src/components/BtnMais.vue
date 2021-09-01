@@ -4,7 +4,7 @@
       <p>+</p>
     </div>
     <div class="text">
-      <p>mais {{ name }}</p>
+      <p>veja mais {{ name }}</p>
     </div>
   </div>
 </template>
