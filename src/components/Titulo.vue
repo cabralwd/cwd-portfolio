@@ -31,6 +31,7 @@ export default {
 
   .subtitulo {
     margin-top: 10px;
+    margin-bottom: 60px;
     font-size: 1rem;
     text-align: center;
     opacity: 0.5;
