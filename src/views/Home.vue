@@ -47,7 +47,7 @@
       />
       <div class="conteudo">
         <div class="projeto" v-for="projeto in projetos" :key="projeto.id">
-          <div @click="toggleOverlay(projeto.id)">
+          <div @click="toggleOverlay(projeto.id, $event)">
             <div :class="['overlay', `id-${projeto.id}`]">
               <h3>{{ projeto.titulo }}</h3>
               <p>{{ projeto.descricao }}</p>
@@ -126,8 +126,15 @@ export default {
   metaInfo: {
     title: "Home",
   },
+  components: {
+    Header,
+    Sobre,
+    Titulo,
+    BtnMais,
+  },
   data() {
     return {
+      carregou: true,
       skills: [
         {
           id: 1,
@@ -171,24 +178,25 @@ export default {
       const el = document.querySelector(`.overlay.id-${id}`);
       const elementos = document.querySelectorAll(".overlay");
 
-      elementos.forEach((el) => {
-        el.classList.remove("active");
-        el.offsetParent.classList.remove("open");
-      });
+      if (el) {
+        elementos.forEach((el) => {
+          el.classList.remove("active");
+          el.offsetParent.classList.remove("open");
+        });
 
-      if (!el.classList.contains("active")) {
-        document.querySelector(`.overlay.id-${id}`).classList.add("active");
-        document
-          .querySelector(`.overlay.id-${id}`)
-          .offsetParent.classList.add("open");
+        if (!el.classList.contains("active")) {
+          document.querySelector(`.overlay.id-${id}`).classList.add("active");
+          document
+            .querySelector(`.overlay.id-${id}`)
+            .offsetParent.classList.add("open");
+        }
+      } else {
+        elementos[0].classList.add("active");
       }
     },
   },
-  components: {
-    Header,
-    Sobre,
-    Titulo,
-    BtnMais,
+  mounted() {
+    this.toggleOverlay();
   },
 };
 </script>
