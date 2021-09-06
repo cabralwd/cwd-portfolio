@@ -127,6 +127,12 @@
           </li>
         </ul>
       </div>
+      <div class="dev">
+        <p>
+          feito com ❤ <i class="devicon-vuejs-plain"></i>
+          {{}}
+        </p>
+      </div>
     </footer>
   </div>
 </template>
@@ -232,6 +238,9 @@ export default {
         elementos[0].classList.add("active");
       }
     },
+    getYear() {
+      console.log(moment);
+    },
   },
   mounted() {
     this.toggleOverlay();
@@ -279,7 +288,7 @@ export default {
 
 footer {
   margin-top: 100px;
-  padding: 100px 0;
+  padding: 100px 0 0 0;
   text-align: center;
   background-color: var(--color-highlight-bg);
 
@@ -338,6 +347,21 @@ footer {
         &::after {
           content: "";
         }
+      }
+    }
+  }
+
+  .dev {
+    padding: 60px 0px 100px 0px;
+    color: var(--color-text);
+
+    i {
+      font-size: 1.2rem;
+    }
+
+    p {
+      &:hover {
+        color: var(--color-highlight);
       }
     }
   }
