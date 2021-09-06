@@ -72,8 +72,24 @@
         titulo="Experiência Profissional"
         subtitulo="Mussum Ipsum, cacilds vidis litro abertis. Si u mundo tá muito paradis?"
       />
+      <div class="conteudo">
+        <div
+          class="item"
+          v-for="experiencia in experiencias"
+          :key="experiencia.id"
+        >
+          <h4 class="titulo">{{ experiencia.titulo }}</h4>
+          <p class="data">{{ experiencia.data }}</p>
+          <ul class="atribuicoes">
+            <li v-for="(attr, index) in experiencia.atribuicoes" :key="index">
+              {{ attr }}
+            </li>
+          </ul>
+        </div>
+      </div>
       <BtnMais name="experiências" />
     </section>
+
     <footer>
       <div class="container">
         <p>Gostou? Fique a vontade para entrar em</p>
@@ -169,6 +185,28 @@ export default {
           titulo: "Crowndfunding",
           descricao:
             "Mussum Ipsum, cacilds vidis litro abertis. Diuretics paradis num copo é motivis de denguis. Per aumento de cachacis, eu reclamis. Manduma pindureta quium dia nois paga. Praesent vel viverra nisi. Mauris aliquet nunc non turpis scelerisque, eget.",
+        },
+      ],
+      experiencias: [
+        {
+          id: 1,
+          titulo: "Oliver Produções",
+          data: "2021/08/12",
+          atribuicoes: [
+            "Workflow especializado em Desenvolvimento de E-mails Marketing com alta escalabilidade e compatibilidade;",
+            "Programação utilizando técnicas avançadas com HTML/CSS;",
+            "Criação de métodos que auxiliam na produtividade e trabalho em equipe;",
+          ],
+        },
+        {
+          id: 2,
+          titulo: "Public Online Marketing Digital",
+          data: "2021/08/12",
+          atribuicoes: [
+            "Workflow especializado em Desenvolvimento de E-mails Marketing com alta escalabilidade e compatibilidade;",
+            "Programação utilizando técnicas avançadas com HTML/CSS;",
+            "Criação de métodos que auxiliam na produtividade e trabalho em equipe;",
+          ],
         },
       ],
     };
@@ -428,6 +466,48 @@ footer {
           @include tamanho-tela(tablet) {
             font-size: 1.125rem;
           }
+        }
+      }
+    }
+  }
+}
+
+.experiencias {
+  .conteudo {
+    .item {
+      color: var(--color-text);
+
+      // &:last-child {
+      //   &::after {
+      //     content: "";
+      //     border: none;
+      //   }
+      // }
+
+      &::after {
+        content: "";
+        width: 100%;
+        display: block;
+        opacity: 0.25;
+        border-top: 2px solid var(--color-text);
+        margin: 30px 0;
+      }
+
+      .titulo {
+        font-weight: 700;
+        font-size: 1.125rem;
+      }
+
+      .data {
+        opacity: 0.5;
+        margin: 0.2rem 0 0.5rem 0;
+      }
+
+      .atribuicoes {
+        padding: 0 0 0 20px;
+        li {
+          list-style-type: disc;
+          line-height: 1.3;
         }
       }
     }
