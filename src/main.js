@@ -9,9 +9,13 @@ Vue.config.productionTip = false;
 
 Vue.use(vueMeta);
 
-Vue.use(VueGtag, {
-  config: { id: "G-M6957320JK" },
-});
+Vue.use(
+  VueGtag,
+  {
+    config: { id: "G-M6957320JK" },
+  },
+  router
+);
 
 new Vue({
   router,
