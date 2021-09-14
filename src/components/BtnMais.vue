@@ -1,5 +1,5 @@
 <template>
-  <div class="btn-mais">
+  <div class="btn-mais" @click="mostrarMaisDados">
     <div class="plus">
       <p>+</p>
     </div>
@@ -12,7 +12,12 @@
 <script>
 export default {
   name: "BtnMais",
-  props: ["name"],
+  props: { name: String },
+  methods: {
+    mostrarMaisDados() {
+      console.log("teste", this.name);
+    },
+  },
 };
 </script>
 
