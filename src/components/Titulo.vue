@@ -25,7 +25,7 @@ export default {
     text-align: center;
 
     @include tamanho-tela(tablet) {
-      font-size: 1.75rem;
+      font-size: 2.75rem;
     }
   }
 
