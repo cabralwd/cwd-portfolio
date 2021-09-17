@@ -13,10 +13,7 @@
       </div>
     </div>
     <div v-else class="sem-itens">
-      <p>
-        Não há mais {{ name }} no momento. <br />
-        novidades em breve!
-      </p>
+      <p>Não há mais {{ name }} no momento.</p>
     </div>
   </div>
 </template>
@@ -75,7 +72,8 @@ export default {
 .sem-itens {
   text-align: center;
   font-size: 1.2rem;
-  color: var(--color-highlight);
+  cursor: not-allowed;
+  color: var(--color-text);
 
   &::before {
     content: "❌";

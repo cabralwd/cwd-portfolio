@@ -1,29 +1,31 @@
 <template>
-  <section class="projetos container">
-    <Titulo
-      titulo="Projetos"
-      subtitulo="Mussum Ipsum, cacilds vidis litro abertis. Si u mundo tá muito paradis?"
-    />
-    <div class="conteudo">
-      <div class="projeto" v-for="projeto in projetos" :key="projeto.id">
-        <div @click="toggleOverlayProjetos(projeto.id, $event)">
-          <div :class="['overlay', `id-${projeto.id}`]">
-            <h3>{{ projeto.titulo }}</h3>
-            <p>{{ projeto.descricao }}</p>
+  <section class="projetos">
+    <div class="container">
+      <Titulo
+        titulo="Projetos"
+        subtitulo="Mussum Ipsum, cacilds vidis litro abertis. Si u mundo tá muito paradis?"
+      />
+      <div class="conteudo">
+        <div class="projeto" v-for="projeto in projetos" :key="projeto.id">
+          <div @click="toggleOverlayProjetos(projeto.id, $event)">
+            <div :class="['overlay', `id-${projeto.id}`]">
+              <h3>{{ projeto.titulo }}</h3>
+              <p>{{ projeto.descricao }}</p>
+            </div>
+            <img
+              :src="
+                projeto.image
+                  ? projeto.image
+                  : 'https://via.placeholder.com/540x410'
+              "
+              :alt="projeto.titulo"
+            />
           </div>
-          <img
-            :src="
-              projeto.image
-                ? projeto.image
-                : 'https://via.placeholder.com/540x410'
-            "
-            :alt="projeto.titulo"
-          />
         </div>
       </div>
-    </div>
 
-    <BtnMais name="projetos" />
+      <BtnMais name="projetos" />
+    </div>
   </section>
 </template>
 
@@ -81,6 +83,26 @@ export default {
 
 <style lang="scss" scoped>
 .projetos {
+  position: relative;
+  padding: 1px 0 5rem 0;
+  max-width: 1920px;
+  margin: 120px auto 0 auto;
+
+  &::before {
+    content: "";
+    background: red url("~@/assets/images/bg-projetos.jpg") no-repeat;
+    background-attachment: fixed;
+    background-position: top center;
+    background-size: cover;
+    object-fit: cover;
+    position: absolute;
+    opacity: 0.14;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+
   .conteudo {
     display: grid;
     grid-template-columns: 1fr;

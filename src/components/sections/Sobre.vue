@@ -3,7 +3,7 @@
     <div class="grid">
       <div class="perfil">
         <p>Muito prazer, me chamo <br /><span>Junior Cabral</span></p>
-        <img src="../../assets/images/foto-perfil-ceo.png" alt="" />
+        <img src="../../assets/images/foto-perfil-dev.png" alt="" />
       </div>
       <div class="historia">
         <p>
