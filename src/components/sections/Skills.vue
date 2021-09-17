@@ -56,7 +56,12 @@ export default {
   },
   filters: {
     formatandoData(data) {
-      return moment(data, ["DD/MM/YYYY"], "pt-br", true).fromNow();
+      return moment(
+        new Date(data),
+        ["ddd MMM DD YYYY HH:mm:ss Z+HHmm"],
+        "pt-br",
+        true
+      ).fromNow();
     },
   },
   methods: {
