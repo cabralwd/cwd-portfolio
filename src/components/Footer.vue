@@ -20,6 +20,9 @@
           <a href="https://code.visualstudio.com/" target="_blank"
             ><i class="devicon-vscode-plain" title="VsCode"></i
           ></a>
+          <a href="https://www.figma.com/" target="_blank"
+            ><i class="devicon-figma-plain" title="Figma"></i
+          ></a>
         </p>
       </div>
     </div>

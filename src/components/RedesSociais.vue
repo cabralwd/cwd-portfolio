@@ -41,7 +41,7 @@ export default {
 
 <style lang="scss" scoped>
 .big-size {
-  font-size: 1.6rem;
+  font-size: 1.35rem;
 
   .redes-sociais {
     justify-content: center;
@@ -51,7 +51,7 @@ export default {
       font-size: 1.05em;
 
       @include tamanho-tela(tablet) {
-        font-size: 1.11em;
+        font-size: 1.15em;
       }
     }
   }
