@@ -13,7 +13,8 @@
           <div class="infos">
             <h5>{{ skill.linguagem }}</h5>
             <p>
-              <span>Tempo:</span> <span>{{ skill.tempo }}</span>
+              <span>Tempo:</span>
+              <span>{{ skill.tempo | formatandoData }}</span>
             </p>
             <p>
               <span>Nível:</span> <span>{{ skill.nivel }}</span>
@@ -37,6 +38,8 @@
 import Titulo from "@/components/Titulo";
 import BtnMais from "@/components/BtnMais";
 
+import moment from "moment";
+
 import { mapState, mapActions } from "vuex";
 
 export default {
@@ -50,6 +53,11 @@ export default {
   },
   computed: {
     ...mapState(["skills", "hasSkillsDb"]),
+  },
+  filters: {
+    formatandoData(data) {
+      return moment(data, ["DD/MM/YYYY"], "pt-br", true).fromNow();
+    },
   },
   methods: {
     ...mapActions(["insereItensNaLista"]),
