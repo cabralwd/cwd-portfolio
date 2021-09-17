@@ -1,22 +1,34 @@
 <template>
-  <div class="btn-mais" @click="mostrarMaisDados">
-    <div class="plus">
-      <p>+</p>
+  <div>
+    <div
+      v-if="temNovosItens"
+      class="btn-mais"
+      @click="insereItensNaLista(novosItens)"
+    >
+      <div class="plus">
+        <p>+</p>
+      </div>
+      <div class="text">
+        <p>veja mais {{ name }}</p>
+      </div>
     </div>
-    <div class="text">
-      <p>veja mais {{ name }}</p>
+    <div v-else class="sem-itens">
+      <p>
+        Não há mais {{ name }} no momento. <br />
+        novidades em breve!
+      </p>
     </div>
   </div>
 </template>
 
 <script>
+import { mapActions } from "vuex";
+
 export default {
   name: "BtnMais",
-  props: { name: String },
+  props: { name: String, novosItens: Object, temNovosItens: Boolean },
   methods: {
-    mostrarMaisDados() {
-      console.log("teste", this.name);
-    },
+    ...mapActions(["insereItensNaLista"]),
   },
 };
 </script>
@@ -28,6 +40,11 @@ export default {
   flex-direction: column;
   font-size: 1.375rem;
   font-weight: 600;
+  opacity: 0.8;
+
+  &:hover {
+    opacity: 1;
+  }
 
   .plus {
     border-radius: 100%;
@@ -52,6 +69,19 @@ export default {
       margin-top: 10px;
       flex-grow: 0;
     }
+  }
+}
+
+.sem-itens {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--color-highlight);
+
+  &::before {
+    content: "❌";
+    display: block;
+    font-size: 2em;
+    margin-bottom: 20px;
   }
 }
 </style>

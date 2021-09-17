@@ -19,13 +19,19 @@
         </ul>
       </div>
     </div>
-    <BtnMais name="experiências" />
+    <BtnMais
+      name="experiências"
+      :novos-itens="{ secao: 'ALTERA_EXPERIENCIAS', qtdItensMostrar: 2 }"
+      :tem-novos-itens="Boolean(hasExperienciasDb)"
+    />
   </section>
 </template>
 
 <script>
 import Titulo from "@/components/Titulo";
 import BtnMais from "@/components/BtnMais";
+
+import { mapState, mapActions } from "vuex";
 
 export default {
   name: "Experiencias",
@@ -34,33 +40,20 @@ export default {
     BtnMais,
   },
   data() {
-    return {
-      experiencias: [
-        {
-          id: 1,
-          titulo: "Oliver Produções",
-          data: "2021/08/12",
-          atribuicoes: [
-            "Workflow especializado em Desenvolvimento de E-mails Marketing com alta escalabilidade e compatibilidade;",
-            "Programação utilizando técnicas avançadas com HTML/CSS;",
-            "Criação de métodos que auxiliam na produtividade e trabalho em equipe;",
-          ],
-        },
-        {
-          id: 2,
-          titulo: "Public Online Marketing Digital",
-          data: "2021/08/12",
-          atribuicoes: [
-            "Workflow especializado em Desenvolvimento de E-mails Marketing com alta escalabilidade e compatibilidade;",
-            "Programação utilizando técnicas avançadas com HTML/CSS;",
-            "Criação de métodos que auxiliam na produtividade e trabalho em equipe;",
-          ],
-        },
-      ],
-    };
+    return {};
   },
-  methods: {},
-  mounted() {},
+  computed: {
+    ...mapState(["experiencias", "hasExperienciasDb"]),
+  },
+  methods: {
+    ...mapActions(["insereItensNaLista"]),
+  },
+  created() {
+    this.insereItensNaLista({
+      secao: "ALTERA_EXPERIENCIAS",
+      qtdItensMostrar: 1,
+    });
+  },
 };
 </script>
 

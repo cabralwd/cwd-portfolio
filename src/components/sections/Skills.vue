@@ -24,15 +24,20 @@
           <p>{{ skill.descricao }}</p>
         </div>
       </div>
-
-      <BtnMais name="habilidades" />
     </div>
+    <BtnMais
+      name="habilidades"
+      :novos-itens="{ secao: 'ALTERA_SKILLS', qtdItensMostrar: 3 }"
+      :tem-novos-itens="Boolean(hasSkillsDb)"
+    />
   </section>
 </template>
 
 <script>
 import Titulo from "@/components/Titulo";
 import BtnMais from "@/components/BtnMais";
+
+import { mapState, mapActions } from "vuex";
 
 export default {
   name: "Skills",
@@ -41,28 +46,16 @@ export default {
     BtnMais,
   },
   data() {
-    return {
-      skills: [
-        {
-          id: 1,
-          logo: "devicon-vuejs-plain-wordmark",
-          linguagem: "Vue.js",
-          tempo: "20/12/2020",
-          nivel: "Intermediário",
-          descricao:
-            "Framework JavaScript progressivo para construção de interfaces de usuário",
-        },
-        {
-          id: 2,
-          logo: "devicon-javascript-plain",
-          linguagem: "JavaScript",
-          tempo: "20/12/2020",
-          nivel: "Intermediário",
-          descricao:
-            "Linguagem de programação da internet utilizada para dar interatividade as páginas",
-        },
-      ],
-    };
+    return {};
+  },
+  computed: {
+    ...mapState(["skills", "hasSkillsDb"]),
+  },
+  methods: {
+    ...mapActions(["insereItensNaLista"]),
+  },
+  created() {
+    this.insereItensNaLista({ secao: "ALTERA_SKILLS", qtdItensMostrar: 3 });
   },
 };
 </script>
@@ -75,6 +68,7 @@ export default {
     align-content: center;
     align-items: center;
     gap: 30px;
+    margin-bottom: 60px;
 
     @include tamanho-tela(tablet) {
       grid-template-columns: repeat(2, 1fr);
