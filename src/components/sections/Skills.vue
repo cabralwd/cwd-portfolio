@@ -4,7 +4,7 @@
       titulo="Skills"
       subtitulo="Mussum Ipsum, cacilds vidis litro abertis. Si u mundo tá muito paradis?"
     />
-    <div class="conteudo">
+    <transition-group tag="div" class="conteudo" name="skills">
       <div v-for="skill in skills" :key="skill.id">
         <div class="fundo">
           <div class="icon">
@@ -25,7 +25,7 @@
           <p>{{ skill.descricao }}</p>
         </div>
       </div>
-    </div>
+    </transition-group>
     <BtnMais
       name="habilidades"
       :novos-itens="{ secao: 'ALTERA_SKILLS', qtdItensMostrar: 3 }"
@@ -131,5 +131,16 @@ export default {
       color: var(--color-text);
     }
   }
+}
+
+.skills-enter-active {
+  transform: translate3d(0, -100px, 0);
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  opacity: 0;
+}
+
+.skills-enter-to {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
 }
 </style>
