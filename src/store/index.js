@@ -1,7 +1,7 @@
 import Vue from "vue";
 import Vuex from "vuex";
 
-import { skills } from "./db/skills";
+import { skillsContent } from "./db/skills";
 import { projetos } from "./db/projetos";
 import { experiencias } from "./db/experiencias";
 
@@ -16,7 +16,10 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   strict: true,
   state: {
-    skills: [],
+    skills: {
+      title: "",
+      items: [],
+    },
     projetos: [],
     experiencias: [],
     hasSkillsDb: null,
@@ -25,11 +28,12 @@ export default new Vuex.Store({
   },
   mutations: {
     [ALTERA_SKILLS](state, payload) {
-      skills.splice(0, payload).forEach((item) => {
-        state.skills.push(item);
+      skillsContent.skills.splice(0, payload).forEach((item) => {
+        state.skills.items.push(item);
       });
 
-      state.hasSkillsDb = skills.length;
+      state.skills.title = skillsContent.title;
+      state.hasSkillsDb = skillsContent.skills.length;
     },
     [ALTERA_PROJETOS](state, payload) {
       projetos.splice(0, payload).forEach((item) => {

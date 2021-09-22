@@ -1,11 +1,9 @@
 <template>
   <section class="skills container">
-    <Titulo
-      titulo="Skills"
-      subtitulo="Mussum Ipsum, cacilds vidis litro abertis. Si u mundo tá muito paradis?"
-    />
+    <Titulo titulo="Skills" :subtitulo="skills.title" />
+
     <transition-group tag="div" class="conteudo" name="skills">
-      <div v-for="skill in skills" :key="skill.id">
+      <div v-for="skill in skills.items" :key="skill.id">
         <div class="fundo">
           <div class="icon">
             <i :class="skill.logo"></i>
