@@ -1,12 +1,13 @@
 <template>
   <section class="projetos">
     <div class="container">
-      <Titulo
-        titulo="Projetos"
-        subtitulo="Mussum Ipsum, cacilds vidis litro abertis. Si u mundo tá muito paradis?"
-      />
+      <Titulo titulo="Projetos" :subtitulo="projetos.title" />
       <div class="conteudo">
-        <div class="projeto" v-for="projeto in projetos" :key="projeto.id">
+        <div
+          class="projeto"
+          v-for="projeto in projetos.items"
+          :key="projeto.id"
+        >
           <div @click="toggleOverlayProjetos(projeto.id, $event)">
             <div :class="['overlay', `id-${projeto.id}`]">
               <h3>{{ projeto.titulo }}</h3>
@@ -24,7 +25,11 @@
         </div>
       </div>
 
-      <BtnMais name="projetos" />
+      <BtnMais
+        name="projetos"
+        :novos-itens="{ secao: 'ALTERA_PROJETOS', qtdItensMostrar: 1 }"
+        :tem-novos-itens="Boolean(hasProjetosDb)"
+      />
     </div>
   </section>
 </template>
@@ -45,7 +50,7 @@ export default {
     return {};
   },
   computed: {
-    ...mapState(["projetos"]),
+    ...mapState(["projetos", "hasProjetosDb"]),
   },
   methods: {
     toggleOverlayProjetos(idItem) {
@@ -137,8 +142,8 @@ export default {
         flex-direction: column;
         text-align: center;
         padding: 30px;
-        background-color: var(--color-highlight);
-        opacity: 0.1;
+        background-color: var(--color-text);
+        opacity: 0.8;
         transition: all 1s;
 
         &.active {
