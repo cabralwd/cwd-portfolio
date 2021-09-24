@@ -6,7 +6,7 @@
       <div v-for="skill in skills.items" :key="skill.id">
         <div class="fundo">
           <div class="icon">
-            <i :class="skill.logo"></i>
+            <i :class="`devicon-${skill.logo}-plain`"></i>
           </div>
           <div class="infos">
             <h5>{{ skill.linguagem }}</h5>
@@ -66,7 +66,7 @@ export default {
     ...mapActions(["insereItensNaLista"]),
   },
   created() {
-    this.insereItensNaLista({ secao: "ALTERA_SKILLS", qtdItensMostrar: 3 });
+    this.insereItensNaLista({ secao: "ALTERA_SKILLS", qtdItensMostrar: 9 });
   },
 };
 </script>
