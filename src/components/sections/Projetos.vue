@@ -11,6 +11,7 @@
           <div @click="toggleOverlayProjetos(projeto.id, $event)">
             <div :class="['overlay', `id-${projeto.id}`]">
               <h3>{{ projeto.titulo }}</h3>
+              <small>clique aqui para ver mais</small>
               <p>{{ projeto.descricao }}</p>
             </div>
             <img
@@ -134,6 +135,7 @@ export default {
 
       .overlay {
         position: absolute;
+        width: 100%;
         max-width: inherit;
         height: 100%;
         display: flex;
@@ -143,29 +145,43 @@ export default {
         text-align: center;
         padding: 30px;
         background-color: var(--color-text);
-        opacity: 0.8;
+        opacity: 0.9;
         transition: all 1s;
 
         &.active {
-          background-color: var(--color-gray);
-          opacity: 1;
+          background-color: var(--color-text);
+          opacity: 0.7;
 
-          h3,
+          h3 {
+            margin-bottom: 30px;
+          }
+
+          small {
+            display: none;
+          }
+
           p {
-            opacity: 1;
+            display: block;
           }
         }
 
         h3 {
-          opacity: 0;
+          opacity: 1;
           font-weight: 700;
           font-size: 1.357rem;
-          margin-bottom: 30px;
+          margin-bottom: 0;
           color: var(--color-gray-content);
         }
 
+        small {
+          display: block;
+          color: var(--color-highlight);
+          margin-top: 1rem;
+          text-decoration: underline;
+        }
+
         p {
-          opacity: 0;
+          display: none;
           font-size: 0.8rem;
           color: var(--color-gray-content);
 
