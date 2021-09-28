@@ -109,7 +109,7 @@ header {
 }
 
 #logo {
-  font-family: Saira Stencil One, cursive;
+  font-family: Saira Stencil One, Verdana, Geneva, Tahoma, sans-serif;
   text-decoration: none;
 
   h1 {

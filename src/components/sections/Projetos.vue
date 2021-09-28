@@ -28,7 +28,7 @@
 
       <BtnMais
         name="projetos"
-        :novos-itens="{ secao: 'ALTERA_PROJETOS', qtdItensMostrar: 1 }"
+        :novos-itens="{ secao: 'ALTERA_PROJETOS', qtdItensMostrar: 2 }"
         :tem-novos-itens="Boolean(hasProjetosDb)"
       />
     </div>

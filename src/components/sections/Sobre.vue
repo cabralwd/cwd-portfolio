@@ -8,8 +8,8 @@
       <div class="historia">
         <p>
           Sou Desenvolvedor Front-end apaixonado por código, finanças e
-          cozinhar. Tenho uma bagagem na área que é super desafiadora e pude ter
-          a oportunidade de evoluir minhas habilidades ao lado de pessoas
+          culinária. Tenho uma bagagem na área que é super desafiadora e pude
+          ter a oportunidade de evoluir minhas habilidades ao lado de pessoas
           incríveis. <br /><br />
           Em meu portifólio você terá acesso as minhas <strong>Skills</strong>,
           <strong>Projetos</strong> criados,
@@ -86,7 +86,7 @@ export default {
       }
 
       span {
-        font-family: Saira Stencil One, cursive;
+        font-family: Saira Stencil One, Verdana, Geneva, Tahoma, sans-serif;
         color: var(--color-highlight);
         font-size: 2.625rem;
       }

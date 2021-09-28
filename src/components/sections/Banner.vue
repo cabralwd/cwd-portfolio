@@ -2,7 +2,7 @@
   <section class="banner">
     <h1 class="titulo-principal">Portfolio</h1>
     <p>
-      Se você chegou até aqui é porque está procurando um Web Designer &
+      Se você chegou até aqui é porque está procurando um Web Designer e
       Programador! <br class="hideThis" />
       Pois bem... Você encontrou, agora deixe-me apresentar:
     </p>
@@ -22,7 +22,7 @@ export default {
 
   .titulo-principal {
     font-size: 4rem;
-    font-family: Saira Stencil One, cursive;
+    font-family: Saira Stencil One, Verdana, Geneva, Tahoma, sans-serif;
     color: var(--color-highlight);
 
     @include tamanho-tela(celular) {

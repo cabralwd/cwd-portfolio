@@ -49,7 +49,7 @@ footer {
 
   h4 {
     font-size: 4rem;
-    font-family: Saira Stencil One, cursive;
+    font-family: Saira Stencil One, Verdana, Geneva, Tahoma, sans-serif;
     color: var(--color-highlight);
 
     @include tamanho-tela(celular) {
