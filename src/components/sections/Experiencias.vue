@@ -1,7 +1,7 @@
 <template>
   <section class="experiencias container">
     <Titulo titulo="Experiência Profissional" :subtitulo="experiencias.title" />
-    <div class="conteudo">
+    <transition-group tag="div" class="conteudo" name="anima">
       <div
         class="item"
         v-for="experiencia in experiencias.items"
@@ -18,7 +18,7 @@
           </li>
         </ul>
       </div>
-    </div>
+    </transition-group>
     <BtnMais
       name="experiências"
       :novos-itens="{ secao: 'ALTERA_EXPERIENCIAS', qtdItensMostrar: 1 }"

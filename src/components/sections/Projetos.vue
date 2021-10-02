@@ -2,7 +2,7 @@
   <section class="projetos">
     <div class="container">
       <Titulo titulo="Projetos" :subtitulo="projetos.title" />
-      <div class="conteudo">
+      <transition-group tag="div" class="conteudo" name="anima">
         <div
           class="projeto"
           v-for="projeto in projetos.items"
@@ -24,7 +24,7 @@
             />
           </div>
         </div>
-      </div>
+      </transition-group>
 
       <BtnMais
         name="projetos"

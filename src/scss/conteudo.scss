@@ -50,3 +50,14 @@ a {
     display: block;
   }
 }
+
+.anima-enter-active {
+  transform: translate3d(0, -100px, 0);
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  opacity: 0;
+}
+
+.anima-enter-to {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}

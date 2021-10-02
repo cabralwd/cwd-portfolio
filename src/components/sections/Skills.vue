@@ -2,7 +2,7 @@
   <section class="skills container">
     <Titulo titulo="Skills" :subtitulo="skills.title" />
 
-    <transition-group tag="div" class="conteudo" name="skills">
+    <transition-group tag="div" class="conteudo" name="anima">
       <div v-for="skill in skills.items" :key="skill.id">
         <div class="fundo">
           <div class="icon">
@@ -129,16 +129,5 @@ export default {
       color: var(--color-text);
     }
   }
-}
-
-.skills-enter-active {
-  transform: translate3d(0, -100px, 0);
-  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  opacity: 0;
-}
-
-.skills-enter-to {
-  transform: translate3d(0, 0, 0);
-  opacity: 1;
 }
 </style>
