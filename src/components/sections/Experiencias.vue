@@ -1,27 +1,27 @@
 <template>
   <section class="experiencias container">
-    <Titulo
-      titulo="Experiência Profissional"
-      subtitulo="Mussum Ipsum, cacilds vidis litro abertis. Si u mundo tá muito paradis?"
-    />
+    <Titulo titulo="Experiência Profissional" :subtitulo="experiencias.title" />
     <div class="conteudo">
       <div
         class="item"
-        v-for="experiencia in experiencias"
+        v-for="experiencia in experiencias.items"
         :key="experiencia.id"
       >
         <h4 class="titulo">{{ experiencia.titulo }}</h4>
-        <p class="data">{{ experiencia.data }}</p>
+        <p class="data">{{ experiencia.data_inicio }}</p>
         <ul class="atribuicoes">
-          <li v-for="(attr, index) in experiencia.atribuicoes" :key="index">
-            {{ attr }}
+          <li
+            v-for="(atribuicao, index) in experiencia.atribuicoes"
+            :key="index"
+          >
+            {{ atribuicao }}
           </li>
         </ul>
       </div>
     </div>
     <BtnMais
       name="experiências"
-      :novos-itens="{ secao: 'ALTERA_EXPERIENCIAS', qtdItensMostrar: 2 }"
+      :novos-itens="{ secao: 'ALTERA_EXPERIENCIAS', qtdItensMostrar: 1 }"
       :tem-novos-itens="Boolean(hasExperienciasDb)"
     />
   </section>
