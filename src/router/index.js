@@ -15,6 +15,19 @@ const routes = [
 const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
+  scrollBehavior(to) {
+    if (to.hash) {
+      return {
+        selector: to.hash,
+        behavior: "smooth",
+        offset: {
+          y: 120,
+        },
+      };
+    } else {
+      window.scrollTo(0, 0);
+    }
+  },
   routes,
 });
 

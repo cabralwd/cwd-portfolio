@@ -2,7 +2,7 @@
   <footer>
     <div class="container">
       <p>Gostou? Fique a vontade para entrar em</p>
-      <h4>Contato</h4>
+      <h4 id="contato">Contato</h4>
       <RedesSociais big-size="big-size" />
 
       <div class="ferramentas">

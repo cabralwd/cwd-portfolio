@@ -1,5 +1,5 @@
 <template>
-  <section class="sobre container">
+  <section class="sobre container" id="sobre">
     <div class="grid">
       <div class="perfil">
         <p>Muito prazer, me chamo <br /><span>Junior Cabral</span></p>

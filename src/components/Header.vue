@@ -36,9 +36,10 @@
         >
           <ul :class="['dropdown']" v-show="toggleMenuDropdown">
             <li><router-link to="/">Home</router-link></li>
-            <li><router-link to="skills">Skills</router-link></li>
-            <li><router-link to="projetos">Projetos</router-link></li>
-            <li><router-link to="contato">Contato</router-link></li>
+            <li><router-link to="#skills">Skills</router-link></li>
+            <li><router-link to="#projetos">Projetos</router-link></li>
+            <li><router-link to="#experiencia">Experiencias</router-link></li>
+            <li><router-link to="#contato">Contato</router-link></li>
           </ul>
         </transition>
       </div>
@@ -266,7 +267,7 @@ nav {
         }
 
         @include tamanho-tela(desktop) {
-          font-size: 5rem;
+          font-size: 3rem;
           line-height: 1.2;
         }
       }

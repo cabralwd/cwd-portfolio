@@ -1,6 +1,6 @@
 <template>
   <section class="skills container">
-    <Titulo titulo="Skills" :subtitulo="skills.title" />
+    <Titulo titulo="Skills" :subtitulo="skills.title" id="skills" />
 
     <transition-group tag="div" class="conteudo" name="anima">
       <div v-for="skill in skills.items" :key="skill.id">

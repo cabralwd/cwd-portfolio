@@ -1,7 +1,7 @@
 <template>
   <section class="projetos">
     <div class="container">
-      <Titulo titulo="Projetos" :subtitulo="projetos.title" />
+      <Titulo titulo="Projetos" :subtitulo="projetos.title" id="projetos" />
       <transition-group tag="div" class="conteudo" name="anima">
         <div
           class="projeto"
