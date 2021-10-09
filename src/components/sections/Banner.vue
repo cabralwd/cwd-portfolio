@@ -1,12 +1,14 @@
 <template>
-  <section class="banner">
-    <h1 class="titulo-principal">Portfolio</h1>
-    <p>
+  <transition-group tag="section" name="anima-banner" appear class="banner">
+    <h1 class="titulo-principal" key="title">
+      Portfolio
+    </h1>
+    <p key="descricao">
       Se você chegou até aqui é porque está procurando um Web Designer e
       Programador! <br class="hideThis" />
       Pois bem... Você encontrou, agora deixe-me apresentar:
     </p>
-  </section>
+  </transition-group>
 </template>
 
 <script>
@@ -51,5 +53,14 @@ export default {
       padding: 0.1rem 0;
     }
   }
+}
+
+.anima-banner-enter-active {
+  opacity: 0;
+  transition: all 0.9s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.anima-banner-enter-to {
+  opacity: 1;
 }
 </style>
