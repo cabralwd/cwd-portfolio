@@ -17,7 +17,7 @@
             <img
               :src="
                 projeto.image
-                  ? projeto.image
+                  ? require(`@/assets/images/projetos/${projeto.image}`)
                   : 'https://via.placeholder.com/540x410'
               "
               :alt="projeto.titulo"
