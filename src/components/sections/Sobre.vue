@@ -2,7 +2,6 @@
   <section class="sobre container" id="sobre">
     <div class="grid">
       <div class="perfil">
-        <p>Muito prazer, me chamo <br /><span>Junior Cabral</span></p>
         <img src="../../assets/images/foto-perfil-dev.png" alt="" />
       </div>
       <div class="historia">
@@ -15,9 +14,9 @@
           <strong>Projetos</strong> criados,
           <strong>experiência profissional</strong> e
           <strong>meus contatos</strong>. E falando nisso, já vou deixar abaixo
-          os links das minhas redes, e-mail e telefone para batermos um papo!
+          os links das minhas redes, e-mails e telefone para batermos um papo!
         </p>
-        <RedesSociais />
+        <RedesSociais class="contatos-sobre" />
       </div>
     </div>
   </section>
@@ -36,12 +35,10 @@ export default {
 
 <style lang="scss" scoped>
 .sobre {
-  margin-top: 100px;
   font-size: 1.125rem;
   font-weight: 500;
   color: var(--color-text);
 
-  &::before,
   &::after {
     content: "";
     width: 100%;
@@ -67,7 +64,6 @@ export default {
 
   .perfil {
     display: flex;
-    flex-direction: column-reverse;
     align-items: center;
 
     @include tamanho-tela(tablet) {
@@ -76,26 +72,32 @@ export default {
       align-items: flex-start;
     }
 
-    p {
-      text-align: center;
-      margin-top: 1.3rem;
-
-      @include tamanho-tela(tablet) {
-        text-align: initial;
-        margin-top: 0;
-      }
-
-      span {
-        font-family: Saira Stencil One, Verdana, Geneva, Tahoma, sans-serif;
-        color: var(--color-highlight);
-        font-size: 2.625rem;
-      }
-    }
-
     img {
       background: var(--color-highlight);
       border-radius: 100%;
-      width: 150px;
+      width: auto;
+      margin: 0 auto;
+    }
+  }
+
+  .historia {
+    .contatos-sobre {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-top: 40px;
+      font-size: 1.4rem;
+
+      @include tamanho-tela(apenas-celular) {
+        align-items: center;
+        font-size: 1rem;
+      }
+
+      @include tamanho-tela(desktop) {
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: flex-end;
+      }
     }
   }
 }

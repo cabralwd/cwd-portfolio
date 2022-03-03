@@ -2,9 +2,15 @@
   <div :class="bigSize">
     <ul class="contatos">
       <li>
-        E-mail:
-        <a href="mailto:cabralwd@icloud.com" target="_self"
-          >cabralwd@icloud.com</a
+        Contato:
+        <a href="mailto:contato@cwd.dev.br" target="_self"
+          >contato@cwd.dev.br</a
+        >
+      </li>
+      <li>
+        Projetos:
+        <a href="mailto:projetos@cwd.dev.br" target="_self"
+          >projetos@cwd.dev.br</a
         >
       </li>
       <li>
@@ -18,15 +24,15 @@
     </ul>
     <ul class="redes-sociais">
       <li>
-        <a href="https://www.linkedin.com/in/cabralwd/" target="_blank"
+        <a href="https://www.linkedin.com/in/cwd-dev/" target="_blank"
           >Linkedin</a
         >
       </li>
       <li>
-        <a href="https://github.com/cabralwd" target="_blank">Github</a>
+        <a href="https://github.com/cwd-dev" target="_blank">Github</a>
       </li>
       <li>
-        <a href="https://www.behance.net/cabralwd" target="_blank">Behance</a>
+        <a href="https://www.behance.net/cwd-dev" target="_blank">Behance</a>
       </li>
     </ul>
   </div>
@@ -68,6 +74,10 @@ li {
 .contatos {
   margin-top: 20px;
   color: var(--color-text);
+
+  @include tamanho-tela(desktop) {
+    margin-top: 0;
+  }
 }
 
 .redes-sociais {

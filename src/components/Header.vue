@@ -3,7 +3,7 @@
     <router-link id="logo" to="/">
       <h1>
         <span>CWD</span>
-        <span>cabral web designer</span>
+        <span>Code - Web - Design</span>
       </h1>
     </router-link>
     <nav>
@@ -117,7 +117,7 @@ header {
     font-size: 2rem;
 
     @include tamanho-tela(tablet) {
-      font-size: 2.625rem;
+      font-size: 3.1rem;
     }
 
     span {
@@ -129,7 +129,8 @@ header {
 
       &:last-child {
         color: var(--color-text);
-        font-size: 0.4em;
+        font-size: 0.7rem;
+        text-transform: uppercase;
       }
     }
   }
