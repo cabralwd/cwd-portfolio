@@ -66,8 +66,12 @@ footer {
   }
 
   p {
-    font-size: 1.375rem;
+    font-size: 1.3rem;
     color: var(--color-text);
+
+    @include tamanho-tela(celular) {
+      font-size: 1.375rem;
+    }
   }
 
   .ferramentas {

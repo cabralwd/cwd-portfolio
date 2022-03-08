@@ -9,7 +9,7 @@
         <p>+</p>
       </div>
       <div class="text">
-        <p>veja mais {{ name }}</p>
+        <p>clique aqui para mais {{ name }}</p>
       </div>
     </div>
     <div v-else class="sem-itens">

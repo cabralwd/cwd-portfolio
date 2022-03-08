@@ -91,7 +91,6 @@ export default {
 .projetos {
   position: relative;
   padding: 1px 0 5rem 0;
-  max-width: 1920px;
   margin: 120px auto 0 auto;
 
   &::before {

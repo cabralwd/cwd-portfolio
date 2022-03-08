@@ -6,9 +6,9 @@
       </div>
       <div class="historia">
         <p>
-          Sou Desenvolvedor Front-end apaixonado por código, finanças e
-          culinária. Tenho uma bagagem na área que é super desafiadora e pude
-          ter a oportunidade de evoluir minhas habilidades ao lado de pessoas
+          Sou Desenvolvedor Front-end apaixonado por código, finanças e música.
+          Tenho uma bagagem na área que é super desafiadora e pude ter a
+          oportunidade de evoluir minhas habilidades ao lado de pessoas
           incríveis. <br /><br />
           Em meu portifólio você terá acesso as minhas <strong>Skills</strong>,
           <strong>Projetos</strong> criados,

@@ -25,14 +25,18 @@
     <ul class="redes-sociais">
       <li>
         <a href="https://www.linkedin.com/in/cwd-dev/" target="_blank"
-          >Linkedin</a
-        >
+          ><font-awesome-icon icon="fa-brands fa-linkedin"
+        /></a>
       </li>
       <li>
-        <a href="https://github.com/cwd-dev" target="_blank">Github</a>
+        <a href="https://github.com/cwd-dev" target="_blank"
+          ><font-awesome-icon icon="fa-brands fa-github"
+        /></a>
       </li>
       <li>
-        <a href="https://www.behance.net/cwd-dev" target="_blank">Behance</a>
+        <a href="https://www.behance.net/cwd-dev" target="_blank"
+          ><font-awesome-icon icon="fa-brands fa-behance"
+        /></a>
       </li>
     </ul>
   </div>
@@ -46,23 +50,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.big-size {
-  font-size: 1.35rem;
-
-  .redes-sociais {
-    justify-content: center;
-
-    li {
-      line-height: 1.3;
-      font-size: 1.05em;
-
-      @include tamanho-tela(tablet) {
-        font-size: 1.15em;
-      }
-    }
-  }
-}
-
 a {
   font-weight: 700;
 }
@@ -82,17 +69,45 @@ li {
 
 .redes-sociais {
   display: flex;
+  justify-content: space-between;
   color: var(--color-text);
+  width: 140px;
+  font-size: 2rem;
+  margin-top: 20px;
 
-  li {
-    &::after {
-      content: "\2012";
-      padding: 0 5px;
-    }
+  @include tamanho-tela(celular) {
+    width: 110px;
+    font-size: 1.6rem;
+  }
 
-    &:last-child {
-      &::after {
-        content: "";
+  @include tamanho-tela(tablet) {
+    margin-top: 15px;
+    width: 120px;
+    font-size: 1.8rem;
+  }
+  @include tamanho-tela(desktop) {
+    width: 130px;
+    font-size: 2rem;
+  }
+  @include tamanho-tela(desktop-up) {
+    width: 140px;
+    font-size: 2.2rem;
+  }
+}
+
+.big-size {
+  font-size: 1.07rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  .redes-sociais {
+    li {
+      line-height: 1.3;
+      font-size: 1.05em;
+
+      @include tamanho-tela(tablet) {
+        font-size: 1.15em;
       }
     }
   }

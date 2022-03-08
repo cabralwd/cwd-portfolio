@@ -25,7 +25,7 @@
       </div>
     </transition-group>
     <BtnMais
-      name="habilidades"
+      name="skills"
       :novos-itens="{ secao: 'ALTERA_SKILLS', qtdItensMostrar: 3 }"
       :tem-novos-itens="Boolean(hasSkillsDb)"
     />
