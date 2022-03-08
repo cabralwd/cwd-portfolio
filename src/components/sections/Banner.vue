@@ -54,6 +54,7 @@ export default {
     font-family: Saira Stencil One, Verdana, Geneva, Tahoma, sans-serif;
     color: var(--color-highlight);
     position: relative;
+    font-size: 0.8em;
 
     @include tamanho-tela(celular) {
       font-size: 1.2em;
@@ -71,7 +72,7 @@ export default {
   small {
     font-size: 0.8em;
     font-weight: 700;
-    margin: 20px 0;
+    margin: 5px 0 25px 0;
     display: block;
     color: var(--color-text);
 
@@ -80,6 +81,7 @@ export default {
     }
 
     @include tamanho-tela(tablet) {
+      margin: 20px 0;
       font-size: 1.4em;
     }
 

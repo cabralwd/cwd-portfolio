@@ -76,7 +76,20 @@ export default {
       background: var(--color-highlight);
       border-radius: 100%;
       width: auto;
+      max-height: 150px;
       margin: 0 auto;
+
+      @include tamanho-tela(celular) {
+        max-height: 200px;
+      }
+
+      @include tamanho-tela(tablet) {
+        max-height: 210px;
+      }
+
+      @include tamanho-tela(desktop) {
+        max-height: fit-content;
+      }
     }
   }
 
